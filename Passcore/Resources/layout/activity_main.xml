@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">    
+    <EditText
+        android:id="@+id/pKey_0"
+        android:maxLines="1"
+        android:hint="@string/pKey_0_hint"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:id="@+id/pKey_1"
+        android:maxLines="1"
+        android:hint="@string/pKey_1_hint"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <EditText
+        android:password="true"
+        android:id="@+id/pKey_2"
+        android:maxLines="1"
+        android:hint="@string/pKey_2_hint"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <SeekBar
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft ="-3dp"
+        android:layout_marginRight="-3dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar" />
+    <CheckBox
+        android:id="@+id/isHard"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/isHard" />
+    <Button
+        android:id="@+id/Generate"
+        android:text="@string/generate"
+        android:textStyle="bold"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center | bottom"
+        android:text="@string/version_display"
+        android:layout_marginBottom="10dp"
+    />
+</LinearLayout>

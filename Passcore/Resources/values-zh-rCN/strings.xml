@@ -1,0 +1,20 @@
+<resources>
+  <string name="app_name">密核</string>
+  <string name="generate">生成密码</string>
+  <string name="pKey_0_hint">标准字段 #1</string>
+  <string name="pKey_1_hint">标准字段 #2</string>
+  <string name="pKey_2_hint">增强字段（可选）</string>
+  <string name="isHard">包含特殊字符</string>
+  <string name="ok">好</string>
+  <string name="copy_to_clipboard">复制到剪切板</string>
+  <string name="copy_success">复制成功</string>
+
+  <string name="alert_title">信息</string>
+  <string name="null_return">发生了一些事故！也许标准字段为空？</string>
+  <string name="null_return_code">错误代码：0x0001</string>
+  <string name="null_return_disc">描述：方法错误返回NULL或空值。如果错误持续存在，请联系开发者。</string>
+  <string name="error_detail">错误详细</string>
+  <string name="detail">详细信息</string>
+  <string name="pass_front">生成的密码为：</string>
+  <string name="version_display">1.0.0 Aquarius(Build #020)</string>
+</resources>

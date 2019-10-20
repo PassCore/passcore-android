@@ -1,0 +1,21 @@
+<resources>
+  <string name="app_name">Passcore</string>
+  <string name="generate">Generate</string>
+  <string name="pKey_0_hint">Standerd Str #1</string>
+  <string name="pKey_1_hint">Standerd Str #2</string>
+  <string name="pKey_2_hint">Enhance Str (Optional)</string>
+  <string name ="isHard">Include characters</string>
+  <string name="ok">OK</string>
+  <string name="copy_to_clipboard">Copy</string>
+  <string name="alert_title">Information</string>
+  <string name="copy_success">Copy to clipboard successfully!</string>
+  <string name="null_return">Something happened! Maybe Standerd Str is empty?</string>
+  <string name="null_return_code">Error Code: 0x0001</string>
+  <string name="null_return_disc">Description: Method returns NULL or Empty. If the error persists, please contact the developer.</string>
+  <string name="error_detail">Error detail</string>
+  <string name="detail">Detail</string>
+  <string name="pass_front">Password:</string>
+	<string name="version">1.0.0 Aquarius</string>
+	<string name="core_version">Build #020</string>
+	<string name="version_display">v1.0.0b Aquarius(Build #020)</string>
+</resources>
