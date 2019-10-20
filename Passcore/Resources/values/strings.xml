@@ -1,8 +1,8 @@
 <resources>
   <string name="app_name">Passcore</string>
   <string name="generate">Generate</string>
-  <string name="pKey_0_hint">Standerd Str #1</string>
-  <string name="pKey_1_hint">Standerd Str #2</string>
+  <string name="pKey_0_hint">Standard Str #1</string>
+  <string name="pKey_1_hint">Standard Str #2</string>
   <string name="pKey_2_hint">Enhance Str (Optional)</string>
   <string name ="isHard">Include characters</string>
   <string name="ok">OK</string>
