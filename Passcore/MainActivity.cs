@@ -230,7 +230,7 @@ namespace Passcore
             {
                 if (loop % step == 0)
                 {
-                    charPool[loop] = SpecialChar[step - 3, charPool[loop] % 10];
+                    charPool[loop] = SpecialChar[step - 5, charPool[loop] % 10];
                 }
             }
 
