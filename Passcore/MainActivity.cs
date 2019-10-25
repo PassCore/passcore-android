@@ -5,7 +5,6 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using Xamarin.Essentials;
-using Core;
 
 namespace Passcore
 {
@@ -30,36 +29,30 @@ namespace Passcore
             Button generate = FindViewById<Button>(Resource.Id.Generate);
             SeekBar seekBar = FindViewById<SeekBar>(Resource.Id.seekBar);
 
-            seekBar.Max = 8;
+            seekBar.Max = 4;
             seekBar.Min = 0;
             
             seekBar.ProgressChanged += (sender, e) =>
             {
-                if (seekBar.Progress <= 1)
+                switch(seekBar.Progress)
                 {
-                    seekBar.Progress = 0; //0,5 -> 16bit
-                    passLength = 16;
-                }
-
-                if (seekBar.Progress > 1 && seekBar.Progress <= 3)
-                {
-                    seekBar.Progress = 2; //1 -> 32bit
-                    passLength = 32;
-                }
-                if (seekBar.Progress > 3 && seekBar.Progress <= 5)
-                {
-                    seekBar.Progress = 4; //1 -> 64bit
-                    passLength = 64;
-                }
-                if (seekBar.Progress > 5 && seekBar.Progress <= 7)
-                {
-                    seekBar.Progress = 6; //1 -> 128bit
-                    passLength = 128;
-                }
-                if (seekBar.Progress > 7 && seekBar.Progress <= 8)
-                {
-                    seekBar.Progress = 8; //0.5 -> 256bit
-                    passLength = 256;
+                    case 0:
+                        passLength = 16;
+                        break;
+                    case 1:
+                        passLength = 32;
+                        break;
+                    case 2:
+                        passLength = 64;
+                        break;
+                    case 3:
+                        passLength = 128;
+                        break;
+                    case 4:
+                        passLength = 256;
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException("Failed to build longer password.");
                 }
             };
 
