@@ -4,6 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">    
     <EditText
+        android:password="true"
         android:id="@+id/pKey_0"
         android:maxLines="1"
         android:hint="@string/pKey_0_hint"
