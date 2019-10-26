@@ -16,5 +16,5 @@
   <string name="error_detail">错误详细</string>
   <string name="detail">详细信息</string>
   <string name="pass_front">生成的密码为：</string>
-  <string name="version_display">1.0.0 Aquarius(Build #020)</string>
+  <string name="version_display">1.0.1 Aquarius(Build #021)</string>
 </resources>
