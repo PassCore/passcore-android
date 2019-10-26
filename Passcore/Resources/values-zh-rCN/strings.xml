@@ -8,7 +8,6 @@
   <string name="ok">好</string>
   <string name="copy_to_clipboard">复制到剪切板</string>
   <string name="copy_success">复制成功</string>
-
   <string name="alert_title">信息</string>
   <string name="null_return">发生了一些事故！也许标准字段为空？</string>
   <string name="null_return_code">错误代码：0x0001</string>
@@ -16,5 +15,4 @@
   <string name="error_detail">错误详细</string>
   <string name="detail">详细信息</string>
   <string name="pass_front">生成的密码为：</string>
-  <string name="version_display">1.0.1 Aquarius(Build #021)</string>
 </resources>

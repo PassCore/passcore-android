@@ -8,7 +8,7 @@ using Xamarin.Essentials;
 
 namespace Passcore
 {
-    [Activity(Label = "@string/app_name", MainLauncher = true)]
+    [Activity(Label = "@string/app_name")]
     public class MainActivity : AppCompatActivity
     {
 
@@ -18,9 +18,8 @@ namespace Passcore
             string pass;
             int passLength = 16;
             base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
-            
 
             EditText pKey_0 = FindViewById<EditText>(Resource.Id.pKey_0);
             EditText pKey_1 = FindViewById<EditText>(Resource.Id.pKey_1);
@@ -60,7 +59,6 @@ namespace Passcore
             {
                 Core.Core core = new Core.Core();
                 pass = core.EncryptMyPass(pKey_0.Text, pKey_1.Text, pKey_2.Text, isHard.Checked);
-                //Toast.MakeText(this, pass, ToastLength.Long);
                 if (pass != null && pass != string.Empty && pass != "")
                 {
                     var alertDialog = new Android.App.AlertDialog.Builder(this).Create();
