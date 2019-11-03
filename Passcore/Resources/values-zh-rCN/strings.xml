@@ -21,5 +21,5 @@
   <string name="lowlength-warning">低长度的密码是不被推荐的。因为其极其可能造成安全隐患。如若您尚不知晓您在做什么，请取消此操作。</string>
   <string name="confirm">确认</string>
   <string name="cancle">取消</string>
-
+  <string name="random">生成随机字段</string>
 </resources>

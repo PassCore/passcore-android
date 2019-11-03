@@ -14,6 +14,7 @@ namespace Passcore
         int passLength = 16;
         int[,] LengthPool = new int[,] { { 16, 32, 64, 128, 256 }, { 4, 6, 8, 10, 12 } };
         bool ShortMode = false;
+        Random random = new Random();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -36,6 +37,7 @@ namespace Passcore
             CheckBox isShort = FindViewById<CheckBox>(Resource.Id.isShort);
             Button generate = FindViewById<Button>(Resource.Id.Generate);
             Button clean = FindViewById<Button>(Resource.Id.Clean);
+            Button randomStr = FindViewById<Button>(Resource.Id.RandomStr);
             #endregion
 
             RefreshLengthDisplay(FindViewById<TextView>(Resource.Id.current_length));
@@ -61,12 +63,6 @@ namespace Passcore
                     alertDialog.SetButton2(Resources.GetString(Resource.String.copy_to_clipboard), async (s, a) =>
                     {
                         await Clipboard.SetTextAsync(pass);
-                        var alertDialog2 = new Android.App.AlertDialog.Builder(this).Create();
-                        alertDialog2.SetTitle(Resources.GetString(Resource.String.alert_title));
-                        alertDialog2.SetMessage(Resources.GetString(Resource.String.copy_success));
-                        alertDialog2.SetButton(Resources.GetString(Resource.String.ok), (n, m) => { });
-                        alertDialog2.Show();
-
                     });
                     alertDialog.Show();
                 }
@@ -118,6 +114,26 @@ namespace Passcore
                 }
             };
 
+            randomStr.Click += (sender, e) =>
+            {
+                char[] CharPool = new char[passLength + 5];
+                for (int loop = 0; loop < passLength; loop++)
+                {
+                    CharPool[loop] = Int2Char(RandomInt(isHard.Checked));
+                }
+                string str = new string(CharPool);
+
+                var alertDialog = new Android.App.AlertDialog.Builder(this).Create();
+                alertDialog.SetTitle(Resources.GetString(Resource.String.alert_title));
+                alertDialog.SetMessage(str);
+                alertDialog.SetButton(Resources.GetString(Resource.String.ok), (s, a) => { });
+                alertDialog.SetButton2(Resources.GetString(Resource.String.copy_to_clipboard), async (s, a) =>
+                {
+                    await Clipboard.SetTextAsync(str);
+                });
+                alertDialog.Show();
+            };
+
         }
 
         private void Seekbar2Length(SeekBar seekBar)
@@ -148,6 +164,57 @@ namespace Passcore
         private void RefreshLengthDisplay(TextView lengthView)
         {
             lengthView.Text = (Resources.GetString(Resource.String.length_display)) + passLength.ToString();
+        }
+    
+        private int RandomInt(bool HasChar)
+        {
+            //Number: 10
+            //Letters: 26*2 -> 52
+            //Chara: 10*3 -> 30
+            //SUM-> 92
+            if (HasChar)
+                return random.Next(0, 92);
+            else
+                return random.Next(0, 61);
+        }
+
+        private char Int2Char(int i)
+        {
+            //0-9
+            if (i >= 0 && i <= 9)
+            {
+                return char.Parse(i.ToString());
+            }
+            
+            else
+            {
+                //A-Z
+                if (i >= 10 && i <= 35)
+                {
+                    return (char)(i + 55);
+                }
+                else
+                {
+                    //a-z
+                    if (i >= 35 && i <= 60)
+                    {
+                        return (char)(i + 62);
+                    }
+                    else
+                    {
+                        if(i>=61 && i <= 91)
+                        {
+                            int tmp = i % 10;
+                            int tmp_0 = (i - tmp) / 10;
+                            return Core.Core.SpecialChar[tmp_0, tmp];
+                        }
+                        else
+                        {
+                            throw new IndexOutOfRangeException();
+                        }
+                    }
+                }
+            }
         }
     }
 }

@@ -75,7 +75,7 @@ namespace Core
             return charPool;
         }
 
-        static char[,] SpecialChar = new char[,]
+        public static char[,] SpecialChar = new char[,]
         {
             //I'm very very very ELEGANT!
             //Special Char Pool -> 3x10
