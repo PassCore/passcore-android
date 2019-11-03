@@ -41,7 +41,6 @@
         android:id="@+id/seekBar" />
     <TextView
         android:text="@string/length_display"
-        
         android:layout_marginLeft ="8dp"
         android:layout_marginRight="8dp"
         android:layout_width="match_parent"
