@@ -15,7 +15,7 @@
   <string name="error_detail">错误详细</string>
   <string name="detail">详细信息</string>
   <string name="pass_front">生成的密码为:</string>
-  <string name="clean_input">清除已输入</string>
+  <string name="clean_input">清除字段</string>
   <string name="length_display">当前密码长度：</string>
   <string name="isShort">使用低长度密码</string>
   <string name="warning">警告</string>
