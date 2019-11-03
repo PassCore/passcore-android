@@ -97,15 +97,16 @@ namespace Passcore
                     alertDialog.SetButton(Resources.GetString(Resource.String.confirm), (s, a) => 
                     {
                         ShortMode = true;
+                        Seekbar2Length(seekBar);
 
                     });
                     alertDialog.SetButton2(Resources.GetString(Resource.String.cancle), (s, a) =>
                     {
                         ShortMode = false;
                         isShort.Checked = false;
+                        Seekbar2Length(seekBar);
                     });
                     alertDialog.Show();
-                    Seekbar2Length(seekBar);
                 }
                 else
                 {
@@ -196,16 +197,16 @@ namespace Passcore
                 else
                 {
                     //a-z
-                    if (i >= 35 && i <= 60)
+                    if (i >= 36 && i <= 61)
                     {
                         return (char)(i + 62);
                     }
                     else
                     {
-                        if(i>=61 && i <= 91)
+                        if (i >= 62 && i <= 91)
                         {
-                            int tmp = i % 10;
-                            int tmp_0 = (i - tmp) / 10;
+                            int tmp = (i - 62) % 10;
+                            int tmp_0 = (i - 62 - tmp) / 10;
                             return Core.Core.SpecialChar[tmp_0, tmp];
                         }
                         else
