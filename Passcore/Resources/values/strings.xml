@@ -16,7 +16,7 @@
   <string name="detail">Detail</string>
   <string name="pass_front">Password:</string>
 	<string name="core_version">Build #020</string>
-	<string name="version">1.0.2 Aquarius(Build #021)</string>
+	<string name="version">1.2 Aquarius(Build #030)</string>
   <string name="clean_input">Clean input</string>
   <string name="length_display">Current password length: </string>
   <string name="isShort">Use low-length password</string>
