@@ -4,7 +4,7 @@
   <string name="pKey_0_hint">Standard Str #1</string>
   <string name="pKey_1_hint">Standard Str #2</string>
   <string name="pKey_2_hint">Enhance Str (Optional)</string>
-  <string name ="isHard">Include characters</string>
+  <string name="isHard">Include characters</string>
   <string name="ok">OK</string>
   <string name="copy_to_clipboard">Copy</string>
   <string name="alert_title">Information</string>
@@ -15,9 +15,10 @@
   <string name="error_detail">Error detail</string>
   <string name="detail">Detail</string>
   <string name="pass_front">Password:</string>
-	<string name="version">1.0.0 Aquarius</string>
 	<string name="core_version">Build #020</string>
 	<string name="version">1.0.2 Aquarius(Build #021)</string>
   <string name="clean_input">Clean input</string>
   <string name="length_display">Current password length: </string>
+
+  <string name="isShort">Use short password</string>
 </resources>
