@@ -14,5 +14,6 @@
   <string name="null_return_disc">描述：方法错误返回NULL或空值。如果错误持续存在，请联系开发者。</string>
   <string name="error_detail">错误详细</string>
   <string name="detail">详细信息</string>
-  <string name="pass_front">生成的密码为：</string>
+  <string name="pass_front">生成的密码为:</string>
+  <string name="clean_input">清除已输入</string>
 </resources>

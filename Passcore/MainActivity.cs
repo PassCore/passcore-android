@@ -26,6 +26,7 @@ namespace Passcore
             EditText pKey_2 = FindViewById<EditText>(Resource.Id.pKey_2);
             CheckBox isHard = FindViewById<CheckBox>(Resource.Id.isHard);
             Button generate = FindViewById<Button>(Resource.Id.Generate);
+            Button clean = FindViewById<Button>(Resource.Id.Clean);
             SeekBar seekBar = FindViewById<SeekBar>(Resource.Id.seekBar);
 
             seekBar.Max = 4;
@@ -97,6 +98,9 @@ namespace Passcore
                     alertDialog.Show();
                 }
             };
+            
+            clean.Click += (sender, e) => pKey_0.Text = pKey_1.Text = pKey_2.Text = string.Empty;
+
         }
 
     }

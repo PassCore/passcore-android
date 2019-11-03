@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent">    
+    android:layout_height="fill_parent">
     <EditText
         android:password="true"
         android:id="@+id/pKey_0"
@@ -38,6 +39,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/seekBar" />
+    <TextView
+        android:text="@string/length"
+        
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/current_length" />
     <CheckBox
         android:id="@+id/isHard"
         android:layout_marginLeft ="8dp"
@@ -45,9 +54,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/isHard" />
+    <CheckBox
+        android:id="@+id/isShort"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/isShort" />
     <Button
         android:id="@+id/Generate"
         android:text="@string/generate"
+        android:textStyle="bold"
+        android:layout_marginLeft ="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <Button
+        android:id="@+id/Clean"
+        android:text="@string/clean_input"
         android:textStyle="bold"
         android:layout_marginLeft ="8dp"
         android:layout_marginRight="8dp"
