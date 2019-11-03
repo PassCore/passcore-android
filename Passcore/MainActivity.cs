@@ -106,7 +106,7 @@ namespace Passcore
 
         private void RefreshLengthDisplay(TextView lengthView)
         {
-            lengthView.Text = (Resources.GetString(Resource.String.length_display) + passLength.ToString();
+            lengthView.Text = (Resources.GetString(Resource.String.length_display)) + passLength.ToString();
         }
     }
 }
