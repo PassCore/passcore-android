@@ -11,12 +11,11 @@ namespace Passcore
     [Activity(Label = "@string/app_name")]
     public class MainActivity : AppCompatActivity
     {
-
+        int passLength = 16;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             this.Window.SetFlags(WindowManagerFlags.Secure, WindowManagerFlags.Secure);
             string pass;
-            int passLength = 16;
             base.OnCreate(savedInstanceState);
             Platform.Init(this, savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
@@ -28,6 +27,8 @@ namespace Passcore
             Button generate = FindViewById<Button>(Resource.Id.Generate);
             Button clean = FindViewById<Button>(Resource.Id.Clean);
             SeekBar seekBar = FindViewById<SeekBar>(Resource.Id.seekBar);
+
+            RefreshLengthDisplay(FindViewById<TextView>(Resource.Id.current_length));
 
             seekBar.Max = 4;
             seekBar.Min = 0;
@@ -103,6 +104,10 @@ namespace Passcore
 
         }
 
+        private void RefreshLengthDisplay(TextView lengthView)
+        {
+            lengthView.Text = (Resources.GetString(Resource.String.length_display) + passLength.ToString();
+        }
     }
 }
 

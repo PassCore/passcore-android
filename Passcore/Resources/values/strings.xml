@@ -19,4 +19,5 @@
 	<string name="core_version">Build #020</string>
 	<string name="version">1.0.2 Aquarius(Build #021)</string>
   <string name="clean_input">Clean input</string>
+  <string name="length_display">Current password length: </string>
 </resources>
