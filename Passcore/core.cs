@@ -7,9 +7,9 @@ namespace Core
     class Core
     {
 
-        public string EncryptMyPass(string pKey_0, string pKey_1) => EncryptMyPass(pKey_0, pKey_1, "Default", false);
-        public string EncryptMyPass(string pKey_0, string pKey_1, string pKey_2) => EncryptMyPass(pKey_0, pKey_1, pKey_2, false);
-        public string EncryptMyPass(string pKey_0, string pKey_1, string pKey_2, bool isHard)
+        public string EncryptMyPass(string pKey_0, string pKey_1) => EncryptMyPass(pKey_0, pKey_1, "Default", false, 16);
+        public string EncryptMyPass(string pKey_0, string pKey_1, string pKey_2) => EncryptMyPass(pKey_0, pKey_1, pKey_2, false, 16);
+        public string EncryptMyPass(string pKey_0, string pKey_1, string pKey_2, bool isHard, int length)
         {
             if (string.IsNullOrWhiteSpace(pKey_1) || string.IsNullOrWhiteSpace(pKey_0))
             {
@@ -18,6 +18,10 @@ namespace Core
             if (string.IsNullOrWhiteSpace(pKey_2))
             {
                 pKey_2 = "Default";
+            }
+            if(length != 16)
+            {
+                pKey_2 += EncryptMyPass(pKey_0, length.ToString()).Substring(0,8);
             }
             Encrypt encrypt = new Encrypt();
             string[] EncryptPool = new string[25]; //General encrypt pool
@@ -42,9 +46,9 @@ namespace Core
             EncryptPool[6] = UpperSomething(EncryptPool[6]);
             string corePass = AddLikeX(AddLikeX(EncryptPool[8].Substring(0, 64), EncryptPool[7].Substring(0, 64)), EncryptPool[6].Substring(0, 128)); //result 256bit encrypted string
             if (isHard == false)
-                return corePass;
+                return corePass.Substring(0, length);
             else
-                return CharSomething(corePass);
+                return CharSomething(corePass).Substring(0,length);
 
         }
 
@@ -123,11 +127,14 @@ namespace Core
                 start += 1;
                 goto gen;
             }
+
+            int tmp = step == 4 ? 5 : step - 5;
+
             for (int loop = 0; loop < charPool.Length; loop++)
             {
                 if (loop % step == 0)
                 {
-                    charPool[loop] = SpecialChar[step - 5, charPool[loop] % 10];
+                    charPool[loop] = SpecialChar[tmp, charPool[loop] % 10];
                 }
             }
 

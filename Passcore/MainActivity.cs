@@ -55,22 +55,23 @@ namespace Passcore
                     default:
                         throw new ArgumentOutOfRangeException("Failed to build longer password.");
                 }
+                RefreshLengthDisplay(FindViewById<TextView>(Resource.Id.current_length));
             };
 
             generate.Click += (sender, e) =>
             {
                 Core.Core core = new Core.Core();
-                pass = core.EncryptMyPass(pKey_0.Text, pKey_1.Text, pKey_2.Text, isHard.Checked);
+                pass = core.EncryptMyPass(pKey_0.Text, pKey_1.Text, pKey_2.Text, isHard.Checked, passLength);
                 if (pass != null && pass != string.Empty && pass != "")
                 {
                     var alertDialog = new Android.App.AlertDialog.Builder(this).Create();
                     alertDialog.SetTitle(Resources.GetString(Resource.String.alert_title));
-                    alertDialog.SetMessage(Resources.GetString(Resource.String.pass_front) + " " + pass.Substring(0, passLength));
+                    alertDialog.SetMessage(Resources.GetString(Resource.String.pass_front) + " " + pass);
                     alertDialog.SetButton(Resources.GetString(Resource.String.ok), (s, a) => { });
                     alertDialog.SetButton2(Resources.GetString(Resource.String.copy_to_clipboard), async (s, a) =>
                     {
 
-                        await Clipboard.SetTextAsync(pass.Substring(0, passLength));
+                        await Clipboard.SetTextAsync(pass);
                         var alertDialog2 = new Android.App.AlertDialog.Builder(this).Create();
                         alertDialog2.SetTitle(Resources.GetString(Resource.String.alert_title));
                         alertDialog2.SetMessage(Resources.GetString(Resource.String.copy_success));
