@@ -17,4 +17,9 @@
   <string name="pass_front">生成的密码为:</string>
   <string name="clean_input">清除已输入</string>
   <string name="length_display">当前密码长度：</string>
+  <string name="warning">警告</string>
+  <string name="lowlength-warning">低长度的密码是不被推荐的。因为其极其可能造成安全隐患。如若您尚不知晓您在做什么，请取消此操作。</string>
+  <string name="confirm">确认</string>
+  <string name="cancle">取消</string>
+
 </resources>

@@ -95,7 +95,20 @@ namespace Passcore
             {
                 if (isShort.Checked)
                 {
-                    ShortMode = true;
+                    var alertDialog = new Android.App.AlertDialog.Builder(this).Create();
+                    alertDialog.SetTitle(Resources.GetString(Resource.String.warning));
+                    alertDialog.SetMessage(Resources.GetString(Resource.String.lowlength_warning));
+                    alertDialog.SetButton(Resources.GetString(Resource.String.confirm), (s, a) => 
+                    {
+                        ShortMode = true;
+
+                    });
+                    alertDialog.SetButton2(Resources.GetString(Resource.String.cancle), (s, a) =>
+                    {
+                        ShortMode = false;
+                        isShort.Checked = false;
+                    });
+                    alertDialog.Show();
                     Seekbar2Length(seekBar);
                 }
                 else

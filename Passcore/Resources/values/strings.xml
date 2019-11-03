@@ -21,4 +21,8 @@
   <string name="length_display">Current password length: </string>
 
   <string name="isShort">Use short password</string>
+  <string name="warning">Warning</string>
+  <string name="lowlength-warning">Low-length passwords are not recommended. Because it is extremely likely to pose a security risk. If you do not know what you are doing, please cancle this operation.</string>
+  <string name="confirm">Confirm</string>
+  <string name="cancle">Cancle</string>
 </resources>
