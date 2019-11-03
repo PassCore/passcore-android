@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Library;
 
 
@@ -128,12 +129,22 @@ namespace Core
                 goto gen;
             }
 
-            int tmp = step == 4 ? 5 : step - 5;
+            int tmp;
+
+            if(step == 4)
+            {
+                tmp = 2;
+            }
+            else
+            {
+                tmp = step - 5;
+            }
 
             for (int loop = 0; loop < charPool.Length; loop++)
             {
                 if (loop % step == 0)
                 {
+                    Debug.WriteLine(loop);
                     charPool[loop] = SpecialChar[tmp, charPool[loop] % 10];
                 }
             }
